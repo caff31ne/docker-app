@@ -3,8 +3,10 @@ sudo: required
 services:
   - docker
 
+language: generic
+
 before_install:
   - docker build -t caff3ine/docker-app -f Dockerfile.dev .
 
 script:
-  - docker run caff3ine/docker-app npm run test -- --coverage
+  - docker run -e CI=true caff3ine/docker-app npm run test
