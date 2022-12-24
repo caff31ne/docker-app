@@ -1,0 +1,10 @@
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - docker build -t caff3ine/docker-app -f Dockerfile.dev .
+
+script:
+  - docker run caff3ine/docker-app npm run test -- --coverage
