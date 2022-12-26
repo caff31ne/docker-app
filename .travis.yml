@@ -11,7 +11,7 @@ before_install:
 script:
   - docker run -e CI=true caff3ine/docker-app npm run test
 
-deploy: http://dockerapp-env.eba-b8puz75z.us-east-1.elasticbeanstalk.com/
+deploy:
   provider: elasticbeanstalk
   region: "us-east-1"
   app: "docker-app"
@@ -21,4 +21,4 @@ deploy: http://dockerapp-env.eba-b8puz75z.us-east-1.elasticbeanstalk.com/
   on:
     branch: main
   access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: "$AWS_SECRET_KEY"
+  secret_access_key: "$AWS_SECRET_KEY"s
